@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.jeefast.modules.platform.dao.PfNoticeDao">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="cn.jeefast.modules.platform.entity.PfNotice">
+		<id column="id" property="id" />
+		<result column="title" property="title" />
+		<result column="type" property="type" />
+		<result column="content" property="content" />
+		<result column="publish_time" property="publishTime" />
+		<result column="creater" property="creater" />
+	</resultMap>
+	
+	<select id="queryPageList" resultType="cn.jeefast.modules.platform.entity.PfNotice">
+		select pn.* , su.`username` createrName
+		from pf_notice pn 
+		LEFT JOIN sys_user su ON su.`user_id`=pn.`creater`
+		<where>
+			<if test="title != null and title.trim() != ''">
+				and pn.`title` like concat('%',#{title},'%')
+			</if>
+		</where>
+		<choose>
+			<when test="sidx != null and sidx.trim() != ''">
+				order by pn.${sidx} ${order}
+			</when>
+			<otherwise>
+				order by pn.id desc
+			</otherwise>
+		</choose>
+	</select>
+	
+	<delete id="deleteBatch">
+		delete from pf_notice where id in 
+		<foreach item="noticeIds" collection="array" open="(" separator="," close=")">
+			#{noticeIds}
+		</foreach>
+	</delete>
+
+</mapper>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.jeefast.rest.dao.TbUserDao">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="cn.jeefast.rest.entity.TbUser">
+		<id column="user_id" property="userId" />
+		<result column="username" property="username" />
+		<result column="mobile" property="mobile" />
+		<result column="password" property="password" />
+		<result column="create_time" property="createTime" />
+	</resultMap>
+	
+	<select id="queryByMobile" resultType="cn.jeefast.rest.entity.TbUser">
+		select * from tb_user where mobile = #{value}
+	</select>
+
+</mapper>
