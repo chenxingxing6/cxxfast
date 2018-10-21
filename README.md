@@ -11,10 +11,6 @@
 - 使用Hibernate Validator校验框架，轻松实现后端校验
 - 使用swagger2支持，方便使用API接口文档
 
-## 如何交流、反馈、参与贡献？
-- Git仓库：https://gitee.com/theodo/jeefast
-- 如需关注项目最新动态，请Watch、Star项目
-
 ## 技术选型：
 - 核心框架：Spring Boot 1.5
 - 安全框架：Apache Shiro 1.3
