@@ -1,6 +1,9 @@
 ## 平台简介
 快速开发平台是基于多个优秀的开源项目，将各个亮点设计融于一体的快速开发平台。平台内置 用户管理、部门管理、角色管理、菜单管理、日志管理、数据源监控、定时任务 等功能。
 
+## 博客
+https://blog.csdn.net/m0_37499059/article/details/83244008
+
 ## 具有如下特点
 - 友好的代码结构及注释，便于阅读及二次开发
 - 实现前后端分离，通过token进行数据交互，前端再也不用关注后端技术
@@ -27,9 +30,9 @@
 - 执行doc/db.sql文件，初始化数据
 - 修改application-dev.yml，更新MySQL账号和密码
 - Eclipse运行jeefast-system工程JeeFastSystemApplication.java，则可启动项目
-- 项目访问路径：http://localhost:8080/jeefast
+- 项目访问路径：http://localhost:8080/cxxfast
 - 账号密码：admin/123456
-
+- rest-api: http://localhost:8081:cxxfast-api/url
 ## 效果图
 ![输入图片说明](https://gitee.com/uploads/images/2017/1106/212319_6de26405_718698.jpeg "登录.jpg")
 ![输入图片说明](https://gitee.com/uploads/images/2017/1106/212334_a2f6eff7_718698.jpeg "系统首页.jpg")
